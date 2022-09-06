@@ -11,4 +11,4 @@ exports.db_connect = async () => {
             .catch(() => { console.log('mongodb connection failed') })
     }
 
-} 
+}  
