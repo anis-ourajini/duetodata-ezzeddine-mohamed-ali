@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">Posts</div>
+    <div class="post" *ngFor="let post of posts">
+      <app-post [post]="post"></app-post>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="card">
+      <div class="card-header">Chart</div>
+      
+        <app-chart [data]="data"></app-chart>
+  
+    </div>
+  </div>
+  

@@ -1,0 +1,19 @@
+<div class="card m-2">
+  <div class="card-body row">
+    <div class="col-1">
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+    <div class="col-6">
+      <p id="{{!fullText ? 'text' : null}}">{{ post.post_text }}</p>
+      <a *ngIf="!fullText" class="readmore" (click)="readMore()">read more</a>
+      <a *ngIf="fullText" class="readmore" (click)="readMore()">show less</a>
+    </div>
+    <div class="col-2">{{ post.post_comments.length }} comment</div>
+    <div class="col-2">
+      {{ post.post_date }}
+    </div>
+    <div class="col-1">
+      <i class="fa-solid fa-thumbs-down"></i>
+    </div>
+  </div>
+</div>
