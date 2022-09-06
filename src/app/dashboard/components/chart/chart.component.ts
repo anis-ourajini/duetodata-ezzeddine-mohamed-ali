@@ -13,8 +13,8 @@ import { ChartType } from "chart.js";
   styleUrls: ["./chart.component.scss"],
 })
 export class ChartComponent implements OnInit, OnChanges {
-  @Input() data: any;
-  @Input() labels: any;
+  @Input() data: number[];
+  @Input() labels: string[];
   lineChartData: any;
   lineChartLabels: any[];
   barChartOptions = {

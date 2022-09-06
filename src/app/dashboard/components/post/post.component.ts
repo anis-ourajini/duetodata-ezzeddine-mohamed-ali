@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { Post } from "../../models";
 import { PostsService } from "../../services/posts.service";
 
 @Component({
@@ -8,7 +9,7 @@ import { PostsService } from "../../services/posts.service";
   styleUrls: ["./post.component.scss"],
 })
 export class PostComponent implements OnInit {
-  @Input() post: any;
+  @Input() post: Post;
   fullText = false;
   constructor(private postService: PostsService, private router: Router,private route:ActivatedRoute) {}
 

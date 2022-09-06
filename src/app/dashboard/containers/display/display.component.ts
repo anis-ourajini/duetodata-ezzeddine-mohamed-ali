@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Post } from "../../models";
 
 import posts29 from "../../../../assets/TF1-2021-06-29.json";
 import posts30 from "../../../../assets/TF1-2021-06-29.json";
@@ -14,9 +15,9 @@ import posts05 from "../../../../assets/TF1-2021-06-29.json";
   styleUrls: ["./display.component.scss"],
 })
 export class DisplayComponent implements OnInit {
-  posts: any[] = [];
-  data: any;
-  labels: any;
+  posts: Post[] = [];
+  data: number[];
+  labels: string[];
 
   constructor() {
     this.posts.push(
@@ -38,11 +39,12 @@ export class DisplayComponent implements OnInit {
   }
 
   getchartData() {
-    this.data = this.posts.map((data) => {
-      return data.post_reactions[Object.keys(data.post_reactions)[0]]
+    this.data = this.posts.map((element: Post) => {
+      return element.post_reactions.likes;
+      //return element.post_reactions[Object.keys(element.post_reactions)[0]]
     });
     this.labels = this.posts.map((data) => {
-      return data.post_date
+      return data.post_date;
     });
   }
 }
