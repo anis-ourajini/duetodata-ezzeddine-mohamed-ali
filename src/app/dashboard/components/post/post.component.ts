@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { PostsService } from "../../services/posts.service";
 
 @Component({
   selector: "app-post",
@@ -8,10 +10,15 @@ import { Component, Input, OnInit } from "@angular/core";
 export class PostComponent implements OnInit {
   @Input() post: any;
   fullText = false;
-  constructor() {}
+  constructor(private postService: PostsService, private router: Router,private route:ActivatedRoute) {}
 
   ngOnInit(): void {}
   readMore() {
     this.fullText = !this.fullText;
+  }
+  visit() {
+    this.postService.post.next(this.post);
+    
+    this.router.navigate(['dashboard/post'])
   }
 }

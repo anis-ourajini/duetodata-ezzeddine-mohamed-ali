@@ -1,0 +1,9 @@
+<div class="container-fluid m-2">
+    <div class="card">
+      <div class="card-header">{{ post.post_text }}</div>
+      <div  *ngFor="let comment of comments">
+        <app-commentview [comment]="comment"></app-commentview>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,15 @@
+<div class="card m-2" >
+    <div class="card-body">
+      <h5 class="card-title">{{comment.comment_author}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">customer journey : {{comment.customer_journey}}</h6>
+      <p class="card-text">{{comment.comment_text}}</p>
+<div class="d-flex">
+    <i class="fa-solid fa-face-angry"> {{ comment.Anger * 100 | number}} % </i>
+    <i class="fa-solid fa-face-tired"> {{ comment.Disgust * 100 | number}} % </i>
+    <i class="fa-solid fa-face-grimace"> {{ comment.Fear * 100 | number}} % </i>
+    <i class="fa-solid fa-face-laugh"> {{ comment.Joy * 100 | number}} % </i>
+    <i class="fa-solid fa-face-sad-tear"> {{ comment.Sadness * 100 | number}} % </i>
+    <i class="fa-solid fa-face-surprise"> {{ comment.Surprise * 100 | number}} % </i>
+</div>
+    </div>
+  </div>

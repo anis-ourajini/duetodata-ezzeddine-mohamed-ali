@@ -14,19 +14,21 @@ import { ChartType } from "chart.js";
 })
 export class ChartComponent implements OnInit, OnChanges {
   @Input() data: any;
-  lineChartData: any[];
+  @Input() labels: any;
+  lineChartData: any;
   lineChartLabels: any[];
-  public lineChartType: ChartType = 'line';
+  barChartOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+  };
+  public lineChartType: ChartType = "line";
   constructor() {}
   ngOnChanges(changes: SimpleChanges) {
-    console.log(this.data);
-    
-    this.lineChartData = this.data.map((e: any) => {
-      return e.data;
-    });
+    this.lineChartData = [{ data: this.data, label: "custom" }];
     this.lineChartLabels = this.data.map((e: any) => {
       return e.label;
     });
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }

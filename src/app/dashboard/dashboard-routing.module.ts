@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DisplayComponent } from './containers/display/display.component';
+import { PostviewComponent } from './containers/postview/postview.component';
 import { DashboardInterfaceComponent } from './dashboard-interface/dashboard-interface.component';
 
 const routes: Routes = [
@@ -12,6 +13,10 @@ const routes: Routes = [
       {
         path: 'display',
         component: DisplayComponent
+      },
+      {
+        path: 'post',
+        component: PostviewComponent
       }
     ],
   }

@@ -1,14 +1,18 @@
 <div class="card m-2">
-  <div class="card-body row">
-    <div class="col-1">
-      <i class="fa-brands fa-instagram"></i>
+  <div class="card-body row align-items-center">
+    <div class="col-1 d-flex justify-content-center">
+      <i class="fa-brands fa-instagram fa-2xl"></i>
     </div>
     <div class="col-6">
-      <p id="{{!fullText ? 'text' : null}}">{{ post.post_text }}</p>
+      <p id="{{ !fullText ? 'text' : null }}">{{ post.post_text }}</p>
       <a *ngIf="!fullText" class="readmore" (click)="readMore()">read more</a>
       <a *ngIf="fullText" class="readmore" (click)="readMore()">show less</a>
     </div>
-    <div class="col-2">{{ post.post_comments.length }} comment</div>
+    <div class="col-2">
+      <a class="comments" (click)="visit()">
+        {{ post.post_comments.length }} comment
+      </a>
+    </div>
     <div class="col-2">
       {{ post.post_date }}
     </div>

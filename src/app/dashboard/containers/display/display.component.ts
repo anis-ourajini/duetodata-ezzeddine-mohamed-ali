@@ -16,6 +16,8 @@ import posts05 from "../../../../assets/TF1-2021-06-29.json";
 export class DisplayComponent implements OnInit {
   posts: any[] = [];
   data: any;
+  labels: any;
+
   constructor() {
     this.posts.push(
       ...posts29[0].posts,
@@ -29,16 +31,18 @@ export class DisplayComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getchartData()
+    this.posts.sort((a: any, b: any) => {
+      return a.post_date.localeCompare(b.post_date);
+    });
+    this.getchartData();
   }
 
   getchartData() {
     this.data = this.posts.map((data) => {
-      return {
-        label: data.post_date,
-        data: [data.post_reactions.likes],
-      };
+      return data.post_reactions[Object.keys(data.post_reactions)[0]]
     });
-    
+    this.labels = this.posts.map((data) => {
+      return data.post_date
+    });
   }
 }
