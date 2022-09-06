@@ -20,7 +20,7 @@ exports.createUser = async (req, res) => {
         return util.send(res);
       });
   } catch (error) {
-    util.setSuccess(400, "error",error);
+    util.setError(400, "error",error);
     return util.send(res);
   }
 };
